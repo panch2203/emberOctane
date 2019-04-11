@@ -4,9 +4,12 @@
 		value={{this.text}} 
 		oninput={{ action this.handleChange value="target.value" }} 
 	>	
-	<button
-		{{ action this.handleSubmit }}
-	>
-		SUBMIT
-	</button>
+	{{#if this.text}}
+		<button
+			{{ action this.handleSubmit }}
+		>
+			SUBMIT
+		</button>
+	{{/if}}
+	
 </form>

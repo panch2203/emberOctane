@@ -10,14 +10,17 @@ export default class TwitterBoxComponent extends Component {
 		this.text = text;
 	}
 
+	@action
+	onInput (value){
+		this.error = false;
+		this.text = value;
+	}
+
 	@action 
-	handleSubmit() {
-		let newText = this.text;
-		if (this.args.onSubmit){
-			this.args.onSubmit(newText);
-		} else {
-			alert('handleSubmit');
-		}
-		
+	handleSubmit() { //aync es clave para usar await
+		let text = this.text;
+		let req = this.args.handleSubmit(text); //Ejecuta esta linea pero vuelve, se pone cuando se va a hacer una peticion afuera
+		//this.error = req.error;
+		this.text = "";
 	}
 }
