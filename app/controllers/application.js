@@ -11,14 +11,15 @@ export default class ApplicationController extends Controller {
 
 	@action
 	onSubmit (text) {
-		debugger;
-		let tweetsCopy = this.tweets.slice();
 
-		this.tweets = tweetsCopy.concat({
-			id: Math.floor(Math.random() * 100) + 3,
+
+		let post = this.store.createRecord('draft_tweet', {
+			avatar: "https://upload.wikimedia.org/wikipedia/commons/5/58/Shiba_inu_taiki.jpg",
 			user_name: "Francisco",
 			description: text,
-			created_at: "2019-04-01"
-		})
+			created_at: "2019-04-16"
+		});
+
+		post.save(); // => POST to '/posts'
 	}
 }

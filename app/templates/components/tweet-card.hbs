@@ -1,3 +1,6 @@
-<li>{{@tweet.id}}</li>
-<li>{{@tweet.userName}}</li>
-<li>{{@tweet.description}}</li>
+<div class="perfilTweet">
+  <img class="kitten" src={{@tweet.avatar}}>
+  <p class="textobold">{{@tweet.user_name}}</p>
+  <p class="textobold">{{@tweet.created_at}}</p>
+  <p class="textobold">{{@tweet.description}}</p>
+</div>
